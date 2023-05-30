@@ -155,7 +155,7 @@ def main(args):
     else:
         new_images = interpolate_hermite(images, args.camera_id, args.format)
 
-    map(scene_manager.add_image, new_images)
+    list(map(scene_manager.add_image, new_images))
 
     scene_manager.save(args.output_folder)
 

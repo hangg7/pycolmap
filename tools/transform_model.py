@@ -15,7 +15,7 @@ def main(args):
 
     # expect each line of input corresponds to one row
     P = np.array(
-        [map(float, sys.stdin.readline().strip().split()) for _ in xrange(3)]
+        [list(map(float, sys.stdin.readline().strip().split())) for _ in xrange(3)]
     )
 
     scene_manager.points3D[:] = (

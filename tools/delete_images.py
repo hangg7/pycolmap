@@ -13,9 +13,11 @@ def main(args):
     scene_manager = SceneManager(args.input_folder)
     scene_manager.load()
 
-    image_ids = map(
-        scene_manager.get_image_from_name,
-        iter(lambda: sys.stdin.readline().strip(), ""),
+    image_ids = list(
+        map(
+            scene_manager.get_image_from_name,
+            iter(lambda: sys.stdin.readline().strip(), ""),
+        )
     )
     scene_manager.delete_images(image_ids)
 
